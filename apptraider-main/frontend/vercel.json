@@ -1,10 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "https://backend-silent-hill-6619.fly.dev/api/$1" },
-    { "src": "/(.*)", "dest": "/$1" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://backend-silent-hill-6619.fly.dev/api/$1" }
   ]
 }
